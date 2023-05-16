@@ -24,6 +24,8 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
 import "./App.css";
+import SignMessage from "./SignMessage";
+import SendTransaction from "./SendTransaction";
 
 const INFURA_KEY = "";
 
@@ -93,6 +95,12 @@ const chains = [
     token: "ETH",
     label: "Goerli",
     rpcUrl: `https://goerli.infura.io/v3/${INFURA_KEY}`,
+  },
+  {
+    id: "0xaa36a7",
+    token: "SepoliaETH",
+    label: "Sepolia",
+    rpcUrl: `https://sepolia.infura.io/v3`,
   },
   {
     id: "0x13881",
@@ -166,6 +174,8 @@ function App() {
         </p>
       </>
       <ConnectWallet />
+      <SignMessage />
+      <SendTransaction />
     </Web3OnboardProvider>
   );
 }
