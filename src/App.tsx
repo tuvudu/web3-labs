@@ -26,6 +26,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import SignMessage from "./SignMessage";
 import SendTransaction from "./SendTransaction";
+import { ethers } from "ethers";
 
 const INFURA_KEY = "";
 
@@ -89,6 +90,12 @@ const chains = [
     token: "ETH",
     label: "Ethereum Mainnet",
     rpcUrl: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
+  },
+  {
+    id: "0x539",
+    token: "ETH",
+    label: "Localhost 8545",
+    rpcUrl: `http://localhost:8545`,
   },
   {
     id: "0x5",
