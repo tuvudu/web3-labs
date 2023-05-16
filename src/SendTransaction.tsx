@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import useWallet from "./hooks/useWallet";
-import { ethers } from "ethers";
+import { ethers, BigNumber } from "ethers";
 
 export default function SendTransaction() {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -13,10 +13,16 @@ export default function SendTransaction() {
     setTxHash("");
     const signer = provider.getSigner();
 
+    // update human amount as the value that you want to transfer
+    // ex: send 10 ETH
+    const humanAmount = 10;
+
     const txHash = await signer.sendTransaction({
       from: wallet.accounts[0].address,
       to: "0xe3b99c8405a3ca59c2f7f4a6494a60f63df2a777",
-      value: "0x0",
+      value: BigNumber.from(humanAmount)
+        .mul(BigNumber.from(10).pow(18))
+        .toHexString(),
       gasLimit: ethers.utils.hexValue(21000),
       gasPrice: "0x2540be400",
       type: "0x0",
