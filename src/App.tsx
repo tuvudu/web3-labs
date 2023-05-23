@@ -1,6 +1,8 @@
 import { Web3OnboardProvider, init } from "@web3-onboard/react";
 import injectedModule from "@web3-onboard/injected-wallets";
-import ledgerModule from "@web3-onboard/ledger";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import ledgerModule from "./packages/ledger";
 import trezorModule from "@web3-onboard/trezor";
 import walletConnectModule from "@web3-onboard/walletconnect";
 import trustModule from "@web3-onboard/trust";
