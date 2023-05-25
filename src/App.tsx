@@ -16,6 +16,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import SignMessage from "./SignMessage";
 import SendTransaction from "./SendTransaction";
+import SignMessageWithOwnWallet from "./SignMessageWithOwnWallet";
 
 const INFURA_KEY = "";
 
@@ -132,6 +133,7 @@ function App() {
       </>
       <ConnectWallet />
       <SignMessage />
+      <SignMessageWithOwnWallet />
       <SendTransaction />
     </Web3OnboardProvider>
   );
